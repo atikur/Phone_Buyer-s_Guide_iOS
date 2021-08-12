@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		24495ECE26C52991007584EA /* PhoneDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495ECD26C52991007584EA /* PhoneDetailController.swift */; };
 		24495ED226C53CC2007584EA /* MobileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495ED126C53CC2007584EA /* MobileViewModel.swift */; };
+		24495EF726C54BA8007584EA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24495EF526C54BA8007584EA /* Model.xcdatamodeld */; };
+		24495F0126C54C34007584EA /* MobileEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495EFF26C54C34007584EA /* MobileEntity+CoreDataClass.swift */; };
+		24495F0226C54C34007584EA /* MobileEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495F0026C54C34007584EA /* MobileEntity+CoreDataProperties.swift */; };
 		24642A4F26C4D3C80070A602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A4E26C4D3C80070A602 /* AppDelegate.swift */; };
 		24642A5826C4D3CC0070A602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24642A5726C4D3CC0070A602 /* Assets.xcassets */; };
 		24642A5B26C4D3CC0070A602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24642A5926C4D3CC0070A602 /* LaunchScreen.storyboard */; };
@@ -26,6 +29,9 @@
 		15E2A3F3C83DE4DE9E05E62F /* Pods-MobileBuyersGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileBuyersGuide.release.xcconfig"; path = "Target Support Files/Pods-MobileBuyersGuide/Pods-MobileBuyersGuide.release.xcconfig"; sourceTree = "<group>"; };
 		24495ECD26C52991007584EA /* PhoneDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDetailController.swift; sourceTree = "<group>"; };
 		24495ED126C53CC2007584EA /* MobileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileViewModel.swift; sourceTree = "<group>"; };
+		24495EF626C54BA8007584EA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		24495EFF26C54C34007584EA /* MobileEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MobileEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		24495F0026C54C34007584EA /* MobileEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MobileEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		24642A4B26C4D3C80070A602 /* MobileBuyersGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileBuyersGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24642A4E26C4D3C80070A602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24642A5726C4D3CC0070A602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +66,16 @@
 				24495ED126C53CC2007584EA /* MobileViewModel.swift */,
 			);
 			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		24495F0526C54CA2007584EA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				24495EFF26C54C34007584EA /* MobileEntity+CoreDataClass.swift */,
+				24495F0026C54C34007584EA /* MobileEntity+CoreDataProperties.swift */,
+				24495EF526C54BA8007584EA /* Model.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		24642A4226C4D3C70070A602 = {
@@ -109,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				24642A7626C4E8670070A602 /* Mobile.swift */,
+				24495F0526C54CA2007584EA /* CoreData */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,13 +297,16 @@
 			files = (
 				24642A8226C4ED8D0070A602 /* SCBRequestManager.swift in Sources */,
 				24642A8B26C4F9C60070A602 /* TabControl.swift in Sources */,
+				24495F0226C54C34007584EA /* MobileEntity+CoreDataProperties.swift in Sources */,
 				24495ED226C53CC2007584EA /* MobileViewModel.swift in Sources */,
 				24642A6826C4D55F0070A602 /* PhoneListController.swift in Sources */,
 				24642A7726C4E8670070A602 /* Mobile.swift in Sources */,
 				24495ECE26C52991007584EA /* PhoneDetailController.swift in Sources */,
 				24642A8E26C5015D0070A602 /* PhoneCell.swift in Sources */,
 				24642A4F26C4D3C80070A602 /* AppDelegate.swift in Sources */,
+				24495F0126C54C34007584EA /* MobileEntity+CoreDataClass.swift in Sources */,
 				24642A6B26C4DF280070A602 /* Color.swift in Sources */,
+				24495EF726C54BA8007584EA /* Model.xcdatamodeld in Sources */,
 				24642A7A26C4E8F80070A602 /* SCBTarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +505,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		24495EF526C54BA8007584EA /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				24495EF626C54BA8007584EA /* Model.xcdatamodel */,
+			);
+			currentVersion = 24495EF626C54BA8007584EA /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 24642A4326C4D3C70070A602 /* Project object */;
 }
