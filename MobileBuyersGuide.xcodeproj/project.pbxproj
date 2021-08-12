@@ -12,9 +12,11 @@
 		24642A5B26C4D3CC0070A602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24642A5926C4D3CC0070A602 /* LaunchScreen.storyboard */; };
 		24642A6826C4D55F0070A602 /* PhoneListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A6726C4D55F0070A602 /* PhoneListController.swift */; };
 		24642A6B26C4DF280070A602 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A6A26C4DF280070A602 /* Color.swift */; };
+		C2244F00708990F8DD9D1D1A /* Pods_MobileBuyersGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC7D120E2779A254A9CFA1 /* Pods_MobileBuyersGuide.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15E2A3F3C83DE4DE9E05E62F /* Pods-MobileBuyersGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileBuyersGuide.release.xcconfig"; path = "Target Support Files/Pods-MobileBuyersGuide/Pods-MobileBuyersGuide.release.xcconfig"; sourceTree = "<group>"; };
 		24642A4B26C4D3C80070A602 /* MobileBuyersGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileBuyersGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24642A4E26C4D3C80070A602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24642A5726C4D3CC0070A602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		24642A5C26C4D3CC0070A602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24642A6726C4D55F0070A602 /* PhoneListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneListController.swift; sourceTree = "<group>"; };
 		24642A6A26C4DF280070A602 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		65DE58A1ABF8BF1348FD8329 /* Pods-MobileBuyersGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileBuyersGuide.debug.xcconfig"; path = "Target Support Files/Pods-MobileBuyersGuide/Pods-MobileBuyersGuide.debug.xcconfig"; sourceTree = "<group>"; };
+		FAEC7D120E2779A254A9CFA1 /* Pods_MobileBuyersGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileBuyersGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2244F00708990F8DD9D1D1A /* Pods_MobileBuyersGuide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				24642A4D26C4D3C80070A602 /* MobileBuyersGuide */,
 				24642A4C26C4D3C80070A602 /* Products */,
+				28DBE129B00CDD15F8A46FB8 /* Pods */,
+				B4C1A0EFD3620C2B2FBDB286 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,24 @@
 			path = MobileBuyersGuide;
 			sourceTree = "<group>";
 		};
+		28DBE129B00CDD15F8A46FB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65DE58A1ABF8BF1348FD8329 /* Pods-MobileBuyersGuide.debug.xcconfig */,
+				15E2A3F3C83DE4DE9E05E62F /* Pods-MobileBuyersGuide.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B4C1A0EFD3620C2B2FBDB286 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAEC7D120E2779A254A9CFA1 /* Pods_MobileBuyersGuide.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24642A5F26C4D3CC0070A602 /* Build configuration list for PBXNativeTarget "MobileBuyersGuide" */;
 			buildPhases = (
+				1E69411A1B2F4E12DC722C5A /* [CP] Check Pods Manifest.lock */,
 				24642A4726C4D3C80070A602 /* Sources */,
 				24642A4826C4D3C80070A602 /* Frameworks */,
 				24642A4926C4D3C80070A602 /* Resources */,
+				94BF1D53DD1BBB89A9FBE3E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,6 +154,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E69411A1B2F4E12DC722C5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MobileBuyersGuide-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94BF1D53DD1BBB89A9FBE3E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileBuyersGuide/Pods-MobileBuyersGuide-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileBuyersGuide/Pods-MobileBuyersGuide-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileBuyersGuide/Pods-MobileBuyersGuide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		24642A4726C4D3C80070A602 /* Sources */ = {
@@ -271,6 +340,7 @@
 		};
 		24642A6026C4D3CC0070A602 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65DE58A1ABF8BF1348FD8329 /* Pods-MobileBuyersGuide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -291,6 +361,7 @@
 		};
 		24642A6126C4D3CC0070A602 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15E2A3F3C83DE4DE9E05E62F /* Pods-MobileBuyersGuide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
