@@ -8,6 +8,5 @@
 import Foundation
 
 struct MobileImage: Codable {
-    let id: String
     let url: String
 }

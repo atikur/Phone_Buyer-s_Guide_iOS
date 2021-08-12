@@ -140,6 +140,7 @@ extension PhoneListController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = PhoneDetailController()
+        controller.mobileViewModel = filteredList[indexPath.row]
         navigationController?.pushViewController(controller, animated: true)
     }
 }

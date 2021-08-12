@@ -29,6 +29,21 @@ class SCBRequestManager {
         }
     }
     
+    public func getImages(
+        mobileId: Int,
+        completion: @escaping (Result<[MobileImage],Error>) -> Void
+    ) {
+        provider.request(.getImages(mobileId: mobileId)) { result in
+            switch result {
+            case .success(let response):
+                guard let images = try? response.map([MobileImage].self) else { return }
+                completion(.success(images))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
     // singleton
     public static var shared = SCBRequestManager()
     private init() {}

@@ -12,6 +12,7 @@
 		24495EF726C54BA8007584EA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24495EF526C54BA8007584EA /* Model.xcdatamodeld */; };
 		24495F0126C54C34007584EA /* MobileEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495EFF26C54C34007584EA /* MobileEntity+CoreDataClass.swift */; };
 		24495F0226C54C34007584EA /* MobileEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495F0026C54C34007584EA /* MobileEntity+CoreDataProperties.swift */; };
+		24495F0826C55EAE007584EA /* MobileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495F0726C55EAE007584EA /* MobileImage.swift */; };
 		24642A4F26C4D3C80070A602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A4E26C4D3C80070A602 /* AppDelegate.swift */; };
 		24642A5826C4D3CC0070A602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24642A5726C4D3CC0070A602 /* Assets.xcassets */; };
 		24642A5B26C4D3CC0070A602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24642A5926C4D3CC0070A602 /* LaunchScreen.storyboard */; };
@@ -32,6 +33,7 @@
 		24495EF626C54BA8007584EA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		24495EFF26C54C34007584EA /* MobileEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MobileEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		24495F0026C54C34007584EA /* MobileEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MobileEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		24495F0726C55EAE007584EA /* MobileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileImage.swift; sourceTree = "<group>"; };
 		24642A4B26C4D3C80070A602 /* MobileBuyersGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileBuyersGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24642A4E26C4D3C80070A602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24642A5726C4D3CC0070A602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				24642A7626C4E8670070A602 /* Mobile.swift */,
+				24495F0726C55EAE007584EA /* MobileImage.swift */,
 				24495F0526C54CA2007584EA /* CoreData */,
 			);
 			path = Models;
@@ -304,6 +307,7 @@
 				24495ECE26C52991007584EA /* PhoneDetailController.swift in Sources */,
 				24642A8E26C5015D0070A602 /* PhoneCell.swift in Sources */,
 				24642A4F26C4D3C80070A602 /* AppDelegate.swift in Sources */,
+				24495F0826C55EAE007584EA /* MobileImage.swift in Sources */,
 				24495F0126C54C34007584EA /* MobileEntity+CoreDataClass.swift in Sources */,
 				24642A6B26C4DF280070A602 /* Color.swift in Sources */,
 				24495EF726C54BA8007584EA /* Model.xcdatamodeld in Sources */,
