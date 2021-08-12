@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class PhoneListController: UIViewController {
     
@@ -42,6 +43,8 @@ class PhoneListController: UIViewController {
         
         setupViews()
         loadData()
+        
+        ProgressHUD.show("Loading...")
     }
     
     // --------------------------
@@ -50,10 +53,12 @@ class PhoneListController: UIViewController {
     
     private func loadData() {
         SCBRequestManager.shared.getMobileList { [weak self] result in
+            ProgressHUD.dismiss()
             switch result {
             case .success(let mobiles):
                 self?.mobileList = mobiles
                 self?.tableView.reloadData()
+                self?.tableView.isHidden = false
             case .failure(let error):
                 print(error)
             }
@@ -106,6 +111,7 @@ class PhoneListController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.isHidden = true
         tableView.dataSource = self
         tableView.rowHeight = 120
         tableView.register(PhoneCell.self, forCellReuseIdentifier: PhoneCell.cellId)
