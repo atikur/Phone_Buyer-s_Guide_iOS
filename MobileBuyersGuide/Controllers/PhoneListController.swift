@@ -25,6 +25,7 @@ class PhoneListController: UIViewController {
     }
     
     private var mobileList: [MobileViewModel] = []
+    private var filteredList: [MobileViewModel] = []
     
     // --------------------------
     // MARK: - Action Handlers
@@ -57,6 +58,7 @@ class PhoneListController: UIViewController {
             switch result {
             case .success(let mobiles):
                 self?.mobileList = mobiles.map {MobileViewModel(with: $0)}
+                self?.filteredList = self?.mobileList ?? []
                 self?.tableView.reloadData()
                 self?.tableView.isHidden = false
             case .failure(let error):
@@ -126,12 +128,12 @@ class PhoneListController: UIViewController {
 extension PhoneListController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mobileList.count
+        return filteredList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PhoneCell.cellId, for: indexPath) as! PhoneCell
-        cell.configure(mobile: mobileList[indexPath.row])
+        cell.configure(mobile: filteredList[indexPath.row])
         cell.delegate = self
         return cell
     }
@@ -152,6 +154,14 @@ extension PhoneListController: PhoneCellDelegate {
 extension PhoneListController: TabControlDelegate {
     
     func didChangeTab(selectedIndex: Int) {
-        print(selectedIndex)
+        if selectedIndex == 1 {
+            MobileViewModel.filterFavorites(mobileList: mobileList) { favorites in
+                self.filteredList = favorites
+                self.tableView.reloadData()
+            }
+        } else {
+            self.filteredList = self.mobileList
+            self.tableView.reloadData()
+        }
     }
 }

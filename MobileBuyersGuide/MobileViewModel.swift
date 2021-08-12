@@ -75,4 +75,9 @@ struct MobileViewModel {
             print(error)
         }
     }
+    
+    public static func filterFavorites(mobileList: [MobileViewModel], completion: @escaping ([MobileViewModel]) -> Void) {
+        let favorites = mobileList.filter {$0.isFavorite()}
+        completion(favorites)
+    }
 }
