@@ -10,6 +10,14 @@ import UIKit
 class PhoneListController: UIViewController {
     
     // --------------------------
+    // MARK: - Action Handlers
+    // --------------------------
+    
+    @objc private func handleDidTapSortBarButtonItem() {
+        print("sort")
+    }
+    
+    // --------------------------
     // MARK: - Lifecyle Methods
     // --------------------------
     
@@ -25,11 +33,15 @@ class PhoneListController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .white
+        
+        addSortBarButtonItem()
     }
     
     // --------------------------
     // MARK: - Views
     // --------------------------
     
-    
+    private func addSortBarButtonItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(handleDidTapSortBarButtonItem))
+    }
 }

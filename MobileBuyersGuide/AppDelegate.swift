@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let controller = PhoneListController()
-        window?.rootViewController = controller
+        let navController = UINavigationController(rootViewController: controller)
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
         return true
