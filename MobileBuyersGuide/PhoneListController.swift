@@ -15,11 +15,25 @@ class PhoneListController: UIViewController {
     }
     
     // --------------------------
+    // MARK: - Properties
+    // --------------------------
+    
+    private var selectedTab: Tab = .all {
+        didSet {
+            handleTabSwitchUIUpdate()
+        }
+    }
+    
+    // --------------------------
     // MARK: - Action Handlers
     // --------------------------
     
     @objc private func handleDidTapSortBarButtonItem() {
         print("sort")
+    }
+    
+    @objc private func handleDidTapOnTabItem() {
+        selectedTab = selectedTab == .all ? .favorite : .all
     }
     
     // --------------------------
@@ -30,6 +44,20 @@ class PhoneListController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+    }
+    
+    // --------------------------
+    // MARK: - Helpers
+    // --------------------------
+    
+    private func handleTabSwitchUIUpdate() {
+        if selectedTab == .all {
+            allOptionLabel.textColor = Color.tabFocused
+            favoriteOptionLabel.textColor = Color.tabUnfocused
+        } else {
+            allOptionLabel.textColor = Color.tabUnfocused
+            favoriteOptionLabel.textColor = Color.tabFocused
+        }
     }
     
     // --------------------------
@@ -68,6 +96,14 @@ class PhoneListController: UIViewController {
         favoriteOptionLabel.leadingAnchor.constraint(equalTo: allOptionLabel.trailingAnchor).isActive = true
         favoriteOptionLabel.centerYAnchor.constraint(equalTo: tabOptionsContainer.centerYAnchor).isActive = true
         favoriteOptionLabel.widthAnchor.constraint(equalTo: tabOptionsContainer.widthAnchor, multiplier: 0.5).isActive = true
+        
+        let allOptionsTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDidTapOnTabItem))
+        allOptionLabel.isUserInteractionEnabled = true
+        allOptionLabel.addGestureRecognizer(allOptionsTapRecognizer)
+        
+        let favoriteOptionsTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDidTapOnTabItem))
+        favoriteOptionLabel.isUserInteractionEnabled = true
+        favoriteOptionLabel.addGestureRecognizer(favoriteOptionsTapRecognizer)
     }
     
     private let tabOptionsContainer: UIView = {
