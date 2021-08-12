@@ -41,12 +41,9 @@ class PhoneCell: UITableViewCell {
     // --------------------------
     
     @objc private func handleDidTapFavoriteButton() {
-        guard var mobile = mobile else { return }
-        
-        mobile.isFavorite.toggle()
-        setFavoriteButtonImage(isFavorite: mobile.isFavorite)
-        
+        guard let mobile = mobile else { return }
         delegate?.didTapFavorite(mobile: mobile)
+        setFavoriteButtonImage()        
     }
     
     // --------------------------
@@ -64,10 +61,11 @@ class PhoneCell: UITableViewCell {
         guard let imageUrl = URL(string: mobile.thumbImageURL) else { return }
         phoneImageView.sd_setImage(with: imageUrl, placeholderImage: nil)
         
-        setFavoriteButtonImage(isFavorite: mobile.isFavorite)
+        setFavoriteButtonImage()
     }
     
-    private func setFavoriteButtonImage(isFavorite: Bool) {
+    private func setFavoriteButtonImage() {
+        guard let isFavorite = mobile?.isFavorite() else { return }
         let favoriteImg = isFavorite ? "starFilled" : "starEmpty"
         favoriteButton.setImage(UIImage(named: favoriteImg), for: .normal)
     }

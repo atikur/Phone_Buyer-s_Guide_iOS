@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="MobileEntity" representedClassName="MobileEntity" syncable="YES">
         <attribute name="isFavorite" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="mobileId" attributeType="String"/>
+        <attribute name="mobileId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
         <element name="MobileEntity" positionX="-45" positionY="0" width="128" height="59"/>

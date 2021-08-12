@@ -144,6 +144,6 @@ extension PhoneListController: UITableViewDataSource, UITableViewDelegate {
 extension PhoneListController: PhoneCellDelegate {
     
     func didTapFavorite(mobile: MobileViewModel) {
-        print("Add to favorite: \(mobile.name)")
+        mobile.isFavorite() ? mobile.removeFromFavorite() : mobile.addToFavorite()
     }
 }
