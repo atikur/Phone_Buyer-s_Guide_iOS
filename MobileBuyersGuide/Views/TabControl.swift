@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol TabControlDelegate: class {
+    func didChangeTab(selectedIndex: Int)
+}
+
 class TabControl: UIView {
     
     // --------------------------
     // MARK: - Properties
     // --------------------------
+    
+    weak var delegate: TabControlDelegate?
     
     private let options: [String]
     
@@ -44,6 +50,8 @@ class TabControl: UIView {
     
     @objc private func handleDidTapOnTabItem() {
         selectedIndex = selectedIndex == 0 ? 1 : 0
+        
+        delegate?.didChangeTab(selectedIndex: selectedIndex)
     }
     
     // --------------------------

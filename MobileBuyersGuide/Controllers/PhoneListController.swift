@@ -101,9 +101,10 @@ class PhoneListController: UIViewController {
     // MARK: - Views
     // --------------------------
     
-    private let tabControl: TabControl = {
+    private lazy var tabControl: TabControl = {
         let options = Tab.allCases.map {$0.rawValue.capitalized}
         let tabControl = TabControl(options: options)
+        tabControl.delegate = self
         tabControl.isUserInteractionEnabled = true
         tabControl.translatesAutoresizingMaskIntoConstraints = false
         return tabControl
@@ -145,5 +146,12 @@ extension PhoneListController: PhoneCellDelegate {
     
     func didTapFavorite(mobile: MobileViewModel) {
         mobile.isFavorite() ? mobile.removeFromFavorite() : mobile.addToFavorite()
+    }
+}
+
+extension PhoneListController: TabControlDelegate {
+    
+    func didChangeTab(selectedIndex: Int) {
+        print(selectedIndex)
     }
 }
