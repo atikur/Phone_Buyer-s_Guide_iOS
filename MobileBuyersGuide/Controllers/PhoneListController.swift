@@ -131,11 +131,19 @@ extension PhoneListController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PhoneCell.cellId, for: indexPath) as! PhoneCell
         cell.configure(mobile: mobileList[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = PhoneDetailController()
         navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+extension PhoneListController: PhoneCellDelegate {
+    
+    func didTapFavorite(mobile: Mobile) {
+        print("Add to favorite: \(mobile.name)")
     }
 }

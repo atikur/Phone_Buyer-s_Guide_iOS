@@ -8,6 +8,10 @@
 import UIKit
 import SDWebImage
 
+protocol PhoneCellDelegate: class {
+    func didTapFavorite(mobile: Mobile)
+}
+
 class PhoneCell: UITableViewCell {
     
     // --------------------------
@@ -15,6 +19,8 @@ class PhoneCell: UITableViewCell {
     // --------------------------
     
     public static let cellId = String(describing: PhoneCell.self)
+    weak var delegate: PhoneCellDelegate?
+    private var mobile: Mobile?
     
     // --------------------------
     // MARK: - Initializers
@@ -31,10 +37,21 @@ class PhoneCell: UITableViewCell {
     }
     
     // --------------------------
+    // MARK: - Action Handlers
+    // --------------------------
+    
+    @objc private func handleDidTapFavoriteButton() {
+        guard let mobile = mobile else { return }
+        delegate?.didTapFavorite(mobile: mobile)
+    }
+    
+    // --------------------------
     // MARK: - Configure
     // --------------------------
     
     public func configure(mobile: Mobile) {
+        self.mobile = mobile
+        
         titleLabel.text = mobile.name.trimmingCharacters(in: .whitespaces)
         descriptionLabel.text = mobile.description.trimmingCharacters(in: .whitespaces)
         ratingLabel.text = "Rating: \(mobile.rating)"
@@ -55,6 +72,17 @@ class PhoneCell: UITableViewCell {
         addLabels()
         
         selectionStyle = .none
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        delegate = nil
+        titleLabel.text = nil
+        descriptionLabel.text = nil
+        priceLabel.text = nil
+        ratingLabel.text = nil
+        phoneImageView.image = nil
     }
     
     private func addPhoneImageView() {
@@ -137,10 +165,11 @@ class PhoneCell: UITableViewCell {
         return imageView
     }()
     
-    private let favoriteButton: UIButton = {
+    private lazy var favoriteButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "starEmpty"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(handleDidTapFavoriteButton), for: .touchUpInside)
         return button
     }()
 }
