@@ -27,6 +27,7 @@ class PhoneDetailController: UIViewController {
         loadData()
         
         ProgressHUD.show("Loading...")
+        descriptionLabel.text = mobileViewModel.description
     }
     
     // --------------------------
@@ -51,8 +52,10 @@ class PhoneDetailController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .white
+        title = mobileViewModel.name
         
         addCollectionView()
+        addDescriptionLabel()
     }
     
     private func addCollectionView() {
@@ -62,6 +65,14 @@ class PhoneDetailController: UIViewController {
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35).isActive = true
     }
+    
+    private func addDescriptionLabel() {
+        view.addSubview(descriptionLabel)
+        descriptionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 12).isActive = true
+        descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -12).isActive = true
+        }
     
     // --------------------------
     // MARK: - Views
@@ -77,6 +88,14 @@ class PhoneDetailController: UIViewController {
         cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
+    }()
+    
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 }
 
