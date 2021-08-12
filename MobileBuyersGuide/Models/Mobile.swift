@@ -1,5 +1,5 @@
 //
-//  Review.swift
+//  Mobile.swift
 //  MobileBuyersGuide
 //
 //  Created by Atikur Rahman on 12/8/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Review: Codable {
+struct Mobile: Codable {
     let id: Int
     let rating: Double
     let thumbImageURL: String

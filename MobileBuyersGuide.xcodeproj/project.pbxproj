@@ -12,7 +12,7 @@
 		24642A5B26C4D3CC0070A602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24642A5926C4D3CC0070A602 /* LaunchScreen.storyboard */; };
 		24642A6826C4D55F0070A602 /* PhoneListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A6726C4D55F0070A602 /* PhoneListController.swift */; };
 		24642A6B26C4DF280070A602 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A6A26C4DF280070A602 /* Color.swift */; };
-		24642A7726C4E8670070A602 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A7626C4E8670070A602 /* Review.swift */; };
+		24642A7726C4E8670070A602 /* Mobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A7626C4E8670070A602 /* Mobile.swift */; };
 		24642A7A26C4E8F80070A602 /* SCBTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A7926C4E8F80070A602 /* SCBTarget.swift */; };
 		C2244F00708990F8DD9D1D1A /* Pods_MobileBuyersGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC7D120E2779A254A9CFA1 /* Pods_MobileBuyersGuide.framework */; };
 /* End PBXBuildFile section */
@@ -26,7 +26,7 @@
 		24642A5C26C4D3CC0070A602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24642A6726C4D55F0070A602 /* PhoneListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneListController.swift; sourceTree = "<group>"; };
 		24642A6A26C4DF280070A602 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		24642A7626C4E8670070A602 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		24642A7626C4E8670070A602 /* Mobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile.swift; sourceTree = "<group>"; };
 		24642A7926C4E8F80070A602 /* SCBTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBTarget.swift; sourceTree = "<group>"; };
 		65DE58A1ABF8BF1348FD8329 /* Pods-MobileBuyersGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileBuyersGuide.debug.xcconfig"; path = "Target Support Files/Pods-MobileBuyersGuide/Pods-MobileBuyersGuide.debug.xcconfig"; sourceTree = "<group>"; };
 		FAEC7D120E2779A254A9CFA1 /* Pods_MobileBuyersGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileBuyersGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +88,7 @@
 		24642A7526C4E8550070A602 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				24642A7626C4E8670070A602 /* Review.swift */,
+				24642A7626C4E8670070A602 /* Mobile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,7 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24642A6826C4D55F0070A602 /* PhoneListController.swift in Sources */,
-				24642A7726C4E8670070A602 /* Review.swift in Sources */,
+				24642A7726C4E8670070A602 /* Mobile.swift in Sources */,
 				24642A4F26C4D3C80070A602 /* AppDelegate.swift in Sources */,
 				24642A6B26C4DF280070A602 /* Color.swift in Sources */,
 				24642A7A26C4E8F80070A602 /* SCBTarget.swift in Sources */,
