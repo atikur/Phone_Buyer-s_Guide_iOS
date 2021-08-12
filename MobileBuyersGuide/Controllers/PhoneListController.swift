@@ -10,11 +10,6 @@ import ProgressHUD
 
 class PhoneListController: UIViewController {
     
-    enum Tab: String, CaseIterable {
-        case all
-        case favorite
-    }
-    
     enum SortOption {
         case priceDesc
         case priceAsc
@@ -162,8 +157,7 @@ class PhoneListController: UIViewController {
     // --------------------------
     
     private lazy var tabControl: TabControl = {
-        let options = Tab.allCases.map {$0.rawValue.capitalized}
-        let tabControl = TabControl(options: options)
+        let tabControl = TabControl(options: ["All", "Favorite"])
         tabControl.delegate = self
         tabControl.isUserInteractionEnabled = true
         tabControl.translatesAutoresizingMaskIntoConstraints = false
