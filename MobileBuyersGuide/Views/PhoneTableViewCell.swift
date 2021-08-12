@@ -1,5 +1,5 @@
 //
-//  PhoneCell.swift
+//  PhoneTableViewCell.swift
 //  MobileBuyersGuide
 //
 //  Created by Atikur Rahman on 12/8/21.
@@ -12,13 +12,13 @@ protocol PhoneCellDelegate: class {
     func didTapFavorite(mobile: MobileViewModel)
 }
 
-class PhoneCell: UITableViewCell {
+class PhoneTableViewCell: UITableViewCell {
     
     // --------------------------
     // MARK: - Properties
     // --------------------------
     
-    public static let cellId = String(describing: PhoneCell.self)
+    public static let cellId = String(describing: PhoneTableViewCell.self)
     weak var delegate: PhoneCellDelegate?
     private var mobile: MobileViewModel?
     public var isDisplayingFavoritesTab = false {
