@@ -34,7 +34,14 @@ class PhoneDetailCollectionViewCell: UICollectionViewCell {
     // --------------------------
     
     public func configure(viewModel: MobileViewModel, image: MobileImage) {
-        guard let imageUrl = URL(string: image.url) else { return }
+        let urlStr: String
+        if image.url.hasPrefix("https://") || image.url.hasPrefix("http://") {
+            urlStr = image.url
+        } else {
+            urlStr = "http://\(image.url)"
+        }
+        
+        guard let imageUrl = URL(string: urlStr) else { return }
         phoneImageView.sd_setImage(with: imageUrl, placeholderImage: nil)
     }
     
