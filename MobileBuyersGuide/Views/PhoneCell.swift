@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PhoneCell: UITableViewCell {
     
@@ -38,6 +39,9 @@ class PhoneCell: UITableViewCell {
         descriptionLabel.text = mobile.description.trimmingCharacters(in: .whitespaces)
         ratingLabel.text = "Rating: \(mobile.rating)"
         priceLabel.text = "Price: $\(mobile.price)"
+        
+        guard let imageUrl = URL(string: mobile.thumbImageURL) else { return }
+        phoneImageView.sd_setImage(with: imageUrl, placeholderImage: nil)
     }
     
     // --------------------------
@@ -56,6 +60,7 @@ class PhoneCell: UITableViewCell {
         phoneImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
         phoneImageView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
         phoneImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
+        phoneImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.25).isActive = true
     }
     
     private func addLabels() {
@@ -113,7 +118,7 @@ class PhoneCell: UITableViewCell {
     
     private let phoneImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
