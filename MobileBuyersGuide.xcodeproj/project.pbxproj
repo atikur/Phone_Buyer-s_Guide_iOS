@@ -13,6 +13,7 @@
 		24495F0126C54C34007584EA /* MobileEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495EFF26C54C34007584EA /* MobileEntity+CoreDataClass.swift */; };
 		24495F0226C54C34007584EA /* MobileEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495F0026C54C34007584EA /* MobileEntity+CoreDataProperties.swift */; };
 		24495F0826C55EAE007584EA /* MobileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495F0726C55EAE007584EA /* MobileImage.swift */; };
+		24495F0C26C58D69007584EA /* PhoneDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495F0B26C58D69007584EA /* PhoneDetailCollectionViewCell.swift */; };
 		24642A4F26C4D3C80070A602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A4E26C4D3C80070A602 /* AppDelegate.swift */; };
 		24642A5826C4D3CC0070A602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24642A5726C4D3CC0070A602 /* Assets.xcassets */; };
 		24642A5B26C4D3CC0070A602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24642A5926C4D3CC0070A602 /* LaunchScreen.storyboard */; };
@@ -34,6 +35,7 @@
 		24495EFF26C54C34007584EA /* MobileEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MobileEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		24495F0026C54C34007584EA /* MobileEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MobileEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		24495F0726C55EAE007584EA /* MobileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileImage.swift; sourceTree = "<group>"; };
+		24495F0B26C58D69007584EA /* PhoneDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		24642A4B26C4D3C80070A602 /* MobileBuyersGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileBuyersGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24642A4E26C4D3C80070A602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24642A5726C4D3CC0070A602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				24642A8926C4F9730070A602 /* Storyboards */,
 				24642A8A26C4F9C60070A602 /* TabControl.swift */,
 				24642A8D26C5015D0070A602 /* PhoneTableViewCell.swift */,
+				24495F0B26C58D69007584EA /* PhoneDetailCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				24495F0126C54C34007584EA /* MobileEntity+CoreDataClass.swift in Sources */,
 				24642A6B26C4DF280070A602 /* Color.swift in Sources */,
 				24495EF726C54BA8007584EA /* Model.xcdatamodeld in Sources */,
+				24495F0C26C58D69007584EA /* PhoneDetailCollectionViewCell.swift in Sources */,
 				24642A7A26C4E8F80070A602 /* SCBTarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

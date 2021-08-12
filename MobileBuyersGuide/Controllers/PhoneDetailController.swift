@@ -14,6 +14,12 @@ class PhoneDetailController: UIViewController {
     // MARK: - Property
     // --------------------------
     
+    private var imageList: [MobileImage] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     public var mobileViewModel: MobileViewModel!
     
     // --------------------------
@@ -39,6 +45,7 @@ class PhoneDetailController: UIViewController {
             ProgressHUD.dismiss()
             switch result {
             case .success(let images):
+                self?.imageList = images
                 print(images)
             case .failure(let error):
                 print(error)
@@ -85,7 +92,7 @@ class PhoneDetailController: UIViewController {
         cv.backgroundColor = .clear
         cv.dataSource = self
         cv.delegate = self
-        cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+        cv.register(PhoneDetailCollectionViewCell.self, forCellWithReuseIdentifier: PhoneDetailCollectionViewCell.cellId)
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
@@ -102,12 +109,12 @@ class PhoneDetailController: UIViewController {
 extension PhoneDetailController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return imageList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
-        cell.backgroundColor = .gray
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhoneDetailCollectionViewCell.cellId, for: indexPath) as! PhoneDetailCollectionViewCell
+        cell.configure(viewModel: mobileViewModel, image: imageList[indexPath.item])
         return cell
     }
     
