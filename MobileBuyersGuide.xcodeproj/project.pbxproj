@@ -67,13 +67,13 @@
 		24642A4D26C4D3C80070A602 /* MobileBuyersGuide */ = {
 			isa = PBXGroup;
 			children = (
-				24642A7526C4E8550070A602 /* Models */,
-				24642A7326C4E8070070A602 /* Network */,
 				24642A4E26C4D3C80070A602 /* AppDelegate.swift */,
-				24642A6726C4D55F0070A602 /* PhoneListController.swift */,
-				24642A6A26C4DF280070A602 /* Color.swift */,
+				24642A7326C4E8070070A602 /* Network */,
+				24642A7526C4E8550070A602 /* Models */,
+				24642A8826C4F9660070A602 /* Views */,
+				24642A8426C4F9350070A602 /* Controllers */,
+				24642A8626C4F9550070A602 /* Utils */,
 				24642A5726C4D3CC0070A602 /* Assets.xcassets */,
-				24642A5926C4D3CC0070A602 /* LaunchScreen.storyboard */,
 				24642A5C26C4D3CC0070A602 /* Info.plist */,
 			);
 			path = MobileBuyersGuide;
@@ -94,6 +94,38 @@
 				24642A7626C4E8670070A602 /* Mobile.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		24642A8426C4F9350070A602 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				24642A6726C4D55F0070A602 /* PhoneListController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		24642A8626C4F9550070A602 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				24642A6A26C4DF280070A602 /* Color.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		24642A8826C4F9660070A602 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				24642A8926C4F9730070A602 /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		24642A8926C4F9730070A602 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				24642A5926C4D3CC0070A602 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		28DBE129B00CDD15F8A46FB8 /* Pods */ = {
