@@ -58,22 +58,19 @@ class PhoneCell: UITableViewCell {
     }
     
     private func addPhoneImageView() {
-        contentView.addSubview(phoneImageView)
-        phoneImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        phoneImageView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-        phoneImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
-        phoneImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.25).isActive = true
+        
     }
     
     private func addLabels() {
+        contentView.addSubview(phoneImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriptionLabel)
-//        contentView.addSubview(priceLabel)
+        contentView.addSubview(priceLabel)
 //        contentView.addSubview(ratingLabel)
         contentView.addSubview(favoriteButton)
         
+        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: phoneImageView.trailingAnchor, constant: 8).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: favoriteButton.leadingAnchor, constant: -8).isActive = true
         
         descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
@@ -84,6 +81,15 @@ class PhoneCell: UITableViewCell {
         favoriteButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
         favoriteButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
         favoriteButton.heightAnchor.constraint(equalTo: favoriteButton.widthAnchor).isActive = true
+        
+        priceLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 4).isActive = true
+        priceLabel.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor).isActive = true
+        priceLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12).isActive = true
+        
+        phoneImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        phoneImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2).isActive = true
+        phoneImageView.heightAnchor.constraint(equalTo: heightAnchor, constant: -24).isActive = true
+        phoneImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
     
     // --------------------------

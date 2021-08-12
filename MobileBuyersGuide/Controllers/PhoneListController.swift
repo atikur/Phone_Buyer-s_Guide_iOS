@@ -91,7 +91,7 @@ class PhoneListController: UIViewController {
     
     private func addTableView() {
         view.addSubview(tableView)
-        tableView.topAnchor.constraint(equalTo: tabControl.bottomAnchor, constant: 12).isActive = true
+        tableView.topAnchor.constraint(equalTo: tabControl.bottomAnchor, constant: 1).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
@@ -114,7 +114,7 @@ class PhoneListController: UIViewController {
         tableView.isHidden = true
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 120
+        tableView.rowHeight = 96
         tableView.register(PhoneCell.self, forCellReuseIdentifier: PhoneCell.cellId)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
