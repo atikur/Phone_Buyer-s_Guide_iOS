@@ -66,14 +66,14 @@ class PhoneCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(priceLabel)
-//        contentView.addSubview(ratingLabel)
+        contentView.addSubview(ratingLabel)
         contentView.addSubview(favoriteButton)
         
         titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: phoneImageView.trailingAnchor, constant: 8).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: favoriteButton.leadingAnchor, constant: -8).isActive = true
         
-        descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
         descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
         
@@ -82,9 +82,12 @@ class PhoneCell: UITableViewCell {
         favoriteButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
         favoriteButton.heightAnchor.constraint(equalTo: favoriteButton.widthAnchor).isActive = true
         
-        priceLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 4).isActive = true
+        priceLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8).isActive = true
         priceLabel.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor).isActive = true
         priceLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12).isActive = true
+        
+        ratingLabel.trailingAnchor.constraint(equalTo: favoriteButton.trailingAnchor).isActive = true
+        ratingLabel.centerYAnchor.constraint(equalTo: priceLabel.centerYAnchor).isActive = true
         
         phoneImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         phoneImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2).isActive = true
@@ -98,7 +101,7 @@ class PhoneCell: UITableViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16, weight: .medium)
+        label.font = .systemFont(ofSize: 16, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -113,7 +116,7 @@ class PhoneCell: UITableViewCell {
     
     private let priceLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = .systemFont(ofSize: 15, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -121,7 +124,7 @@ class PhoneCell: UITableViewCell {
     private let ratingLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = .systemFont(ofSize: 14, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
