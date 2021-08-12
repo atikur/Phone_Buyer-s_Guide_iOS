@@ -115,6 +115,7 @@ class PhoneListController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 96
+        tableView.tableFooterView = UIView()
         tableView.register(PhoneCell.self, forCellReuseIdentifier: PhoneCell.cellId)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
