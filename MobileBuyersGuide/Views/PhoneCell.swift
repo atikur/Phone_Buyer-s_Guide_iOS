@@ -21,6 +21,11 @@ class PhoneCell: UITableViewCell {
     public static let cellId = String(describing: PhoneCell.self)
     weak var delegate: PhoneCellDelegate?
     private var mobile: MobileViewModel?
+    public var isDisplayingFavoritesTab = false {
+        didSet {
+            favoriteButton.isHidden = isDisplayingFavoritesTab
+        }
+    }
     
     // --------------------------
     // MARK: - Initializers

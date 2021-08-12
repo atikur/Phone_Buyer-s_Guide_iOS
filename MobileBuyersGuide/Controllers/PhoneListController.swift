@@ -166,6 +166,7 @@ extension PhoneListController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PhoneCell.cellId, for: indexPath) as! PhoneCell
         cell.configure(mobile: filteredList[indexPath.row])
+        cell.isDisplayingFavoritesTab = selectedTabIndex == 1
         cell.delegate = self
         return cell
     }
