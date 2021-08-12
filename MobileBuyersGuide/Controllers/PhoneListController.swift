@@ -113,6 +113,7 @@ class PhoneListController: UIViewController {
         let tableView = UITableView()
         tableView.isHidden = true
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.rowHeight = 120
         tableView.register(PhoneCell.self, forCellReuseIdentifier: PhoneCell.cellId)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -120,7 +121,7 @@ class PhoneListController: UIViewController {
     }()
 }
 
-extension PhoneListController: UITableViewDataSource {
+extension PhoneListController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mobileList.count
@@ -130,5 +131,10 @@ extension PhoneListController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: PhoneCell.cellId, for: indexPath) as! PhoneCell
         cell.configure(mobile: mobileList[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = PhoneDetailController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

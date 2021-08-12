@@ -53,6 +53,8 @@ class PhoneCell: UITableViewCell {
         
         addPhoneImageView()
         addLabels()
+        
+        selectionStyle = .none
     }
     
     private func addPhoneImageView() {
