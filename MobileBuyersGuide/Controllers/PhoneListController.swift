@@ -19,8 +19,15 @@ class PhoneListController: UIViewController {
     // MARK: - Properties
     // --------------------------
     
-    private var selectedTab: Tab = .all {
+    private var selectedTabIndex = 0 {
         didSet {
+            if selectedTabIndex == 1 {
+                MobileViewModel.filterFavorites(mobileList: mobileList) { favorites in
+                    self.filteredList = favorites
+                }
+            } else {
+                self.filteredList = self.mobileList
+            }
         }
     }
     
@@ -168,6 +175,22 @@ extension PhoneListController: UITableViewDataSource, UITableViewDelegate {
         controller.mobileViewModel = filteredList[indexPath.row]
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return selectedTabIndex == 1
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            let mobileViewModel = filteredList[indexPath.row]
+            mobileViewModel.removeFromFavorite()
+            filteredList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+        }
+        print("delete row")
+    }
 }
 
 extension PhoneListController: PhoneCellDelegate {
@@ -180,12 +203,6 @@ extension PhoneListController: PhoneCellDelegate {
 extension PhoneListController: TabControlDelegate {
     
     func didChangeTab(selectedIndex: Int) {
-        if selectedIndex == 1 {
-            MobileViewModel.filterFavorites(mobileList: mobileList) { favorites in
-                self.filteredList = favorites
-            }
-        } else {
-            self.filteredList = self.mobileList
-        }
+        selectedTabIndex = selectedIndex
     }
 }
