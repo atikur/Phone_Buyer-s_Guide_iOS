@@ -171,7 +171,7 @@ class PhoneListController: UIViewController {
         tableView.delegate = self
         tableView.rowHeight = 108
         tableView.tableFooterView = UIView()
-        tableView.register(PhoneCell.self, forCellReuseIdentifier: PhoneCell.cellId)
+        tableView.register(PhoneTableViewCell.self, forCellReuseIdentifier: PhoneTableViewCell.cellId)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -184,7 +184,7 @@ extension PhoneListController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PhoneCell.cellId, for: indexPath) as! PhoneCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PhoneTableViewCell.cellId, for: indexPath) as! PhoneTableViewCell
         cell.configure(mobile: filteredList[indexPath.row])
         cell.isDisplayingFavoritesTab = selectedTabIndex == 1
         cell.delegate = self
