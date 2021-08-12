@@ -9,7 +9,7 @@ import UIKit
 import SDWebImage
 
 protocol PhoneCellDelegate: class {
-    func didTapFavorite(mobile: Mobile)
+    func didTapFavorite(mobile: MobileViewModel)
 }
 
 class PhoneCell: UITableViewCell {
@@ -20,7 +20,7 @@ class PhoneCell: UITableViewCell {
     
     public static let cellId = String(describing: PhoneCell.self)
     weak var delegate: PhoneCellDelegate?
-    private var mobile: Mobile?
+    private var mobile: MobileViewModel?
     
     // --------------------------
     // MARK: - Initializers
@@ -49,7 +49,7 @@ class PhoneCell: UITableViewCell {
     // MARK: - Configure
     // --------------------------
     
-    public func configure(mobile: Mobile) {
+    public func configure(mobile: MobileViewModel) {
         self.mobile = mobile
         
         titleLabel.text = mobile.name.trimmingCharacters(in: .whitespaces)

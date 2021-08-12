@@ -24,7 +24,7 @@ class PhoneListController: UIViewController {
         }
     }
     
-    private var mobileList: [Mobile] = []
+    private var mobileList: [MobileViewModel] = []
     
     // --------------------------
     // MARK: - Action Handlers
@@ -56,7 +56,7 @@ class PhoneListController: UIViewController {
             ProgressHUD.dismiss()
             switch result {
             case .success(let mobiles):
-                self?.mobileList = mobiles
+                self?.mobileList = mobiles.map {MobileViewModel(with: $0)}
                 self?.tableView.reloadData()
                 self?.tableView.isHidden = false
             case .failure(let error):
@@ -143,7 +143,7 @@ extension PhoneListController: UITableViewDataSource, UITableViewDelegate {
 
 extension PhoneListController: PhoneCellDelegate {
     
-    func didTapFavorite(mobile: Mobile) {
+    func didTapFavorite(mobile: MobileViewModel) {
         print("Add to favorite: \(mobile.name)")
     }
 }
