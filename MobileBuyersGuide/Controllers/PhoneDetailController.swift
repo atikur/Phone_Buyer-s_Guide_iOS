@@ -92,6 +92,7 @@ class PhoneDetailController: UIViewController {
         cv.backgroundColor = .clear
         cv.dataSource = self
         cv.delegate = self
+        cv.isPagingEnabled = true
         cv.register(PhoneDetailCollectionViewCell.self, forCellWithReuseIdentifier: PhoneDetailCollectionViewCell.cellId)
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
