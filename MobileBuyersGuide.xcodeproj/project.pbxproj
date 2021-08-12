@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24495ECE26C52991007584EA /* PhoneDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495ECD26C52991007584EA /* PhoneDetailController.swift */; };
+		24495ED226C53CC2007584EA /* MobileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495ED126C53CC2007584EA /* MobileViewModel.swift */; };
 		24642A4F26C4D3C80070A602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A4E26C4D3C80070A602 /* AppDelegate.swift */; };
 		24642A5826C4D3CC0070A602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24642A5726C4D3CC0070A602 /* Assets.xcassets */; };
 		24642A5B26C4D3CC0070A602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24642A5926C4D3CC0070A602 /* LaunchScreen.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		15E2A3F3C83DE4DE9E05E62F /* Pods-MobileBuyersGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileBuyersGuide.release.xcconfig"; path = "Target Support Files/Pods-MobileBuyersGuide/Pods-MobileBuyersGuide.release.xcconfig"; sourceTree = "<group>"; };
 		24495ECD26C52991007584EA /* PhoneDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDetailController.swift; sourceTree = "<group>"; };
+		24495ED126C53CC2007584EA /* MobileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileViewModel.swift; sourceTree = "<group>"; };
 		24642A4B26C4D3C80070A602 /* MobileBuyersGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileBuyersGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24642A4E26C4D3C80070A602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24642A5726C4D3CC0070A602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24495ED026C53CA8007584EA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				24495ED126C53CC2007584EA /* MobileViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
 		24642A4226C4D3C70070A602 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 				24642A7526C4E8550070A602 /* Models */,
 				24642A8826C4F9660070A602 /* Views */,
 				24642A8426C4F9350070A602 /* Controllers */,
+				24495ED026C53CA8007584EA /* ViewModels */,
 				24642A8626C4F9550070A602 /* Utils */,
 				24642A5726C4D3CC0070A602 /* Assets.xcassets */,
 				24642A5C26C4D3CC0070A602 /* Info.plist */,
@@ -269,6 +280,7 @@
 			files = (
 				24642A8226C4ED8D0070A602 /* SCBRequestManager.swift in Sources */,
 				24642A8B26C4F9C60070A602 /* TabControl.swift in Sources */,
+				24495ED226C53CC2007584EA /* MobileViewModel.swift in Sources */,
 				24642A6826C4D55F0070A602 /* PhoneListController.swift in Sources */,
 				24642A7726C4E8670070A602 /* Mobile.swift in Sources */,
 				24495ECE26C52991007584EA /* PhoneDetailController.swift in Sources */,
