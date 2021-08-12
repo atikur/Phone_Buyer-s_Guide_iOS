@@ -15,6 +15,12 @@ class PhoneListController: UIViewController {
         case favorite
     }
     
+    enum SortOption {
+        case priceDesc
+        case priceAsc
+        case ratingDesc
+    }
+    
     // --------------------------
     // MARK: - Properties
     // --------------------------
@@ -24,10 +30,18 @@ class PhoneListController: UIViewController {
             if selectedTabIndex == 1 {
                 MobileViewModel.filterFavorites(mobileList: mobileList) { favorites in
                     self.filteredList = favorites
+                    self.sortResults()
                 }
             } else {
                 self.filteredList = self.mobileList
+                self.sortResults()
             }
+        }
+    }
+    
+    private var selectedSortOption: SortOption? {
+        didSet {
+            sortResults()
         }
     }
     
@@ -117,18 +131,30 @@ class PhoneListController: UIViewController {
         let alertController = UIAlertController(title: "Sort", message: nil, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: { [weak self] _ in
             guard let strongSelf = self else { return }
-            strongSelf.filteredList.sort(by: {$0.price < $1.price})
+            strongSelf.selectedSortOption = .priceAsc
         }))
         alertController.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: { [weak self] _ in
             guard let strongSelf = self else { return }
-            strongSelf.filteredList.sort(by: {$0.price > $1.price})
+            strongSelf.selectedSortOption = .priceDesc
         }))
         alertController.addAction(UIAlertAction(title: "Rating 5-1", style: .default, handler: { [weak self] _ in
             guard let strongSelf = self else { return }
-            strongSelf.filteredList.sort(by: {$0.rating > $1.rating})
+            strongSelf.selectedSortOption = .ratingDesc
         }))
         alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         present(alertController, animated: true)
+    }
+    
+    private func sortResults() {
+        guard let sortOption = selectedSortOption else { return }
+        switch sortOption {
+        case .priceDesc:
+            filteredList.sort(by: {$0.price > $1.price})
+        case .priceAsc:
+            filteredList.sort(by: {$0.price < $1.price})
+        case .ratingDesc:
+            filteredList.sort(by: {$0.rating > $1.rating})
+        }
     }
     
     // --------------------------
