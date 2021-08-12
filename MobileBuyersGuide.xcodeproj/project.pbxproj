@@ -11,6 +11,7 @@
 		24642A5826C4D3CC0070A602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24642A5726C4D3CC0070A602 /* Assets.xcassets */; };
 		24642A5B26C4D3CC0070A602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24642A5926C4D3CC0070A602 /* LaunchScreen.storyboard */; };
 		24642A6826C4D55F0070A602 /* PhoneListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A6726C4D55F0070A602 /* PhoneListController.swift */; };
+		24642A6B26C4DF280070A602 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A6A26C4DF280070A602 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		24642A5A26C4D3CC0070A602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24642A5C26C4D3CC0070A602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24642A6726C4D55F0070A602 /* PhoneListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneListController.swift; sourceTree = "<group>"; };
+		24642A6A26C4DF280070A602 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				24642A4E26C4D3C80070A602 /* AppDelegate.swift */,
 				24642A6726C4D55F0070A602 /* PhoneListController.swift */,
+				24642A6A26C4DF280070A602 /* Color.swift */,
 				24642A5726C4D3CC0070A602 /* Assets.xcassets */,
 				24642A5926C4D3CC0070A602 /* LaunchScreen.storyboard */,
 				24642A5C26C4D3CC0070A602 /* Info.plist */,
@@ -132,6 +135,7 @@
 			files = (
 				24642A6826C4D55F0070A602 /* PhoneListController.swift in Sources */,
 				24642A4F26C4D3C80070A602 /* AppDelegate.swift in Sources */,
+				24642A6B26C4DF280070A602 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
