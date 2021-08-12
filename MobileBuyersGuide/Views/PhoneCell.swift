@@ -57,7 +57,7 @@ class PhoneCell: UITableViewCell {
     
     private func addPhoneImageView() {
         contentView.addSubview(phoneImageView)
-        phoneImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
+        phoneImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         phoneImageView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
         phoneImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
         phoneImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.25).isActive = true
@@ -78,8 +78,10 @@ class PhoneCell: UITableViewCell {
         descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
         
-        favoriteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
+        favoriteButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         favoriteButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+        favoriteButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
+        favoriteButton.heightAnchor.constraint(equalTo: favoriteButton.widthAnchor).isActive = true
     }
     
     // --------------------------
@@ -126,6 +128,7 @@ class PhoneCell: UITableViewCell {
     
     private let favoriteButton: UIButton = {
         let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "starEmpty"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
