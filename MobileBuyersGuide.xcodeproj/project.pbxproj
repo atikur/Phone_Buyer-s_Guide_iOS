@@ -15,6 +15,7 @@
 		24642A7726C4E8670070A602 /* Mobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A7626C4E8670070A602 /* Mobile.swift */; };
 		24642A7A26C4E8F80070A602 /* SCBTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A7926C4E8F80070A602 /* SCBTarget.swift */; };
 		24642A8226C4ED8D0070A602 /* SCBRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A8126C4ED8D0070A602 /* SCBRequestManager.swift */; };
+		24642A8B26C4F9C60070A602 /* TabControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24642A8A26C4F9C60070A602 /* TabControl.swift */; };
 		C2244F00708990F8DD9D1D1A /* Pods_MobileBuyersGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC7D120E2779A254A9CFA1 /* Pods_MobileBuyersGuide.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		24642A7626C4E8670070A602 /* Mobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile.swift; sourceTree = "<group>"; };
 		24642A7926C4E8F80070A602 /* SCBTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBTarget.swift; sourceTree = "<group>"; };
 		24642A8126C4ED8D0070A602 /* SCBRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBRequestManager.swift; sourceTree = "<group>"; };
+		24642A8A26C4F9C60070A602 /* TabControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControl.swift; sourceTree = "<group>"; };
 		65DE58A1ABF8BF1348FD8329 /* Pods-MobileBuyersGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileBuyersGuide.debug.xcconfig"; path = "Target Support Files/Pods-MobileBuyersGuide/Pods-MobileBuyersGuide.debug.xcconfig"; sourceTree = "<group>"; };
 		FAEC7D120E2779A254A9CFA1 /* Pods_MobileBuyersGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileBuyersGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				24642A8926C4F9730070A602 /* Storyboards */,
+				24642A8A26C4F9C60070A602 /* TabControl.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24642A8226C4ED8D0070A602 /* SCBRequestManager.swift in Sources */,
+				24642A8B26C4F9C60070A602 /* TabControl.swift in Sources */,
 				24642A6826C4D55F0070A602 /* PhoneListController.swift in Sources */,
 				24642A7726C4E8670070A602 /* Mobile.swift in Sources */,
 				24642A4F26C4D3C80070A602 /* AppDelegate.swift in Sources */,

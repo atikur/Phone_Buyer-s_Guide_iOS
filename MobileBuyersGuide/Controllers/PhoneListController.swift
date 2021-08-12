@@ -20,7 +20,6 @@ class PhoneListController: UIViewController {
     
     private var selectedTab: Tab = .all {
         didSet {
-            handleTabSwitchUIUpdate()
         }
     }
     
@@ -32,10 +31,6 @@ class PhoneListController: UIViewController {
         print("sort")
     }
     
-    @objc private func handleDidTapOnTabItem() {
-        selectedTab = selectedTab == .all ? .favorite : .all
-    }
-    
     // --------------------------
     // MARK: - Lifecyle Methods
     // --------------------------
@@ -44,20 +39,6 @@ class PhoneListController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
-    }
-    
-    // --------------------------
-    // MARK: - Helpers
-    // --------------------------
-    
-    private func handleTabSwitchUIUpdate() {
-        if selectedTab == .all {
-            allOptionLabel.textColor = Color.tabFocused
-            favoriteOptionLabel.textColor = Color.tabUnfocused
-        } else {
-            allOptionLabel.textColor = Color.tabUnfocused
-            favoriteOptionLabel.textColor = Color.tabFocused
-        }
     }
     
     // --------------------------
@@ -80,60 +61,18 @@ class PhoneListController: UIViewController {
     // --------------------------
     
     private func addTabOptions() {
-        view.addSubview(tabOptionsContainer)
-        tabOptionsContainer.addSubview(allOptionLabel)
-        tabOptionsContainer.addSubview(favoriteOptionLabel)
-        
-        tabOptionsContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        tabOptionsContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        tabOptionsContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        tabOptionsContainer.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        
-        allOptionLabel.leadingAnchor.constraint(equalTo: tabOptionsContainer.leadingAnchor).isActive = true
-        allOptionLabel.centerYAnchor.constraint(equalTo: tabOptionsContainer.centerYAnchor).isActive = true
-        allOptionLabel.widthAnchor.constraint(equalTo: tabOptionsContainer.widthAnchor, multiplier: 0.5).isActive = true
-        
-        favoriteOptionLabel.leadingAnchor.constraint(equalTo: allOptionLabel.trailingAnchor).isActive = true
-        favoriteOptionLabel.centerYAnchor.constraint(equalTo: tabOptionsContainer.centerYAnchor).isActive = true
-        favoriteOptionLabel.widthAnchor.constraint(equalTo: tabOptionsContainer.widthAnchor, multiplier: 0.5).isActive = true
-        
-        let allOptionsTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDidTapOnTabItem))
-        allOptionLabel.isUserInteractionEnabled = true
-        allOptionLabel.addGestureRecognizer(allOptionsTapRecognizer)
-        
-        let favoriteOptionsTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDidTapOnTabItem))
-        favoriteOptionLabel.isUserInteractionEnabled = true
-        favoriteOptionLabel.addGestureRecognizer(favoriteOptionsTapRecognizer)
+        view.addSubview(tabControl)
+        tabControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        tabControl.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        tabControl.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        tabControl.heightAnchor.constraint(equalToConstant: 44).isActive = true
     }
     
-    private let tabOptionsContainer: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 0.4
-        view.layer.shadowOffset = .zero
-        view.layer.shadowRadius = 1
-        return view
-    }()
-    
-    private let allOptionLabel: UILabel = {
-        let label = UILabel()
-        label.text = Tab.all.rawValue.capitalized
-        label.textAlignment = .center
-        label.textColor = Color.tabFocused
-        label.font = .systemFont(ofSize: 15, weight: .medium)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let favoriteOptionLabel: UILabel = {
-        let label = UILabel()
-        label.text = Tab.favorite.rawValue.capitalized
-        label.textAlignment = .center
-        label.textColor = Color.tabUnfocused
-        label.font = .systemFont(ofSize: 15, weight: .medium)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private let tabControl: TabControl = {
+        let options = Tab.allCases.map {$0.rawValue.capitalized}
+        let tabControl = TabControl(options: options)
+        tabControl.isUserInteractionEnabled = true
+        tabControl.translatesAutoresizingMaskIntoConstraints = false
+        return tabControl
     }()
 }
