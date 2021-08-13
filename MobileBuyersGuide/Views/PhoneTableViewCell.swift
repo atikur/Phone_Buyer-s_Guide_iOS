@@ -19,8 +19,9 @@ class PhoneTableViewCell: UITableViewCell {
     // --------------------------
     
     public static let cellId = String(describing: PhoneTableViewCell.self)
-    weak var delegate: PhoneCellDelegate?
+    public weak var delegate: PhoneCellDelegate?
     private var mobile: MobileViewModel?
+    
     public var isDisplayingFavoritesTab = false {
         didSet {
             favoriteButton.isHidden = isDisplayingFavoritesTab
@@ -42,6 +43,21 @@ class PhoneTableViewCell: UITableViewCell {
     }
     
     // --------------------------
+    // MARK: - Lifecyle Methods
+    // --------------------------
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        delegate = nil
+        titleLabel.text = nil
+        descriptionLabel.text = nil
+        priceLabel.text = nil
+        ratingLabel.text = nil
+        phoneImageView.image = nil
+    }
+    
+    // --------------------------
     // MARK: - Action Handlers
     // --------------------------
     
@@ -52,7 +68,7 @@ class PhoneTableViewCell: UITableViewCell {
     }
     
     // --------------------------
-    // MARK: - Configure
+    // MARK: - Configure Cell
     // --------------------------
     
     public func configure(mobile: MobileViewModel) {
@@ -81,29 +97,8 @@ class PhoneTableViewCell: UITableViewCell {
     
     private func setupViews() {
         backgroundColor = .white
-        
-        addPhoneImageView()
-        addLabels()
-        
         selectionStyle = .none
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
         
-        delegate = nil
-        titleLabel.text = nil
-        descriptionLabel.text = nil
-        priceLabel.text = nil
-        ratingLabel.text = nil
-        phoneImageView.image = nil
-    }
-    
-    private func addPhoneImageView() {
-        
-    }
-    
-    private func addLabels() {
         contentView.addSubview(phoneImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriptionLabel)
@@ -111,6 +106,11 @@ class PhoneTableViewCell: UITableViewCell {
         contentView.addSubview(ratingLabel)
         contentView.addSubview(favoriteButton)
         
+        addLabels()
+        addImageAndButton()
+    }
+    
+    private func addLabels() {
         titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: phoneImageView.trailingAnchor, constant: 8).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: favoriteButton.leadingAnchor, constant: -8).isActive = true
@@ -119,17 +119,19 @@ class PhoneTableViewCell: UITableViewCell {
         descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
         
-        favoriteButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        favoriteButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
-        favoriteButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
-        favoriteButton.heightAnchor.constraint(equalTo: favoriteButton.widthAnchor).isActive = true
-        
         priceLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8).isActive = true
         priceLabel.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor).isActive = true
         priceLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12).isActive = true
         
         ratingLabel.trailingAnchor.constraint(equalTo: favoriteButton.trailingAnchor).isActive = true
         ratingLabel.centerYAnchor.constraint(equalTo: priceLabel.centerYAnchor).isActive = true
+    }
+    
+    private func addImageAndButton() {
+        favoriteButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        favoriteButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+        favoriteButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
+        favoriteButton.heightAnchor.constraint(equalTo: favoriteButton.widthAnchor).isActive = true
         
         phoneImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         phoneImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2).isActive = true
