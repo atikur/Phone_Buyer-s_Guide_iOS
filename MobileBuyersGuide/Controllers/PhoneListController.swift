@@ -82,7 +82,11 @@ class PhoneListController: UIViewController {
                 self?.filteredList = self?.mobileList ?? []
                 self?.tableView.isHidden = false
             case .failure(let error):
-                print(error)
+                if let error = error as? SCBRequestManager.SCBError {
+                    self?.showAlert(title: "Error", message: error.message)
+                } else {
+                    self?.showAlert(title: "Error", message: "Please try again later.")
+                }
             }
         }
     }

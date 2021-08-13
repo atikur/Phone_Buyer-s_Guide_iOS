@@ -13,6 +13,17 @@ class SCBRequestManager {
         case apiError
         case parseFail
         case other
+        
+        var message: String {
+            switch self {
+            case .apiError:
+                return "Unable to process your request. Try again later."
+            case .parseFail:
+                return "Error processing the request. Please try again later."
+            case .other:
+                return "Please try again later."
+            }
+        }
     }
     
     private let provider = MoyaProvider<SCBTarget>()
@@ -32,8 +43,8 @@ class SCBRequestManager {
                 } catch {
                     completion(.failure(SCBError.parseFail))
                 }
-            case .failure(let error):
-                completion(.failure(error))
+            case .failure:
+                completion(.failure(SCBError.other))
             }
         }
     }
