@@ -43,6 +43,7 @@ class PhoneListController: UIViewController {
     private var mobileList: [MobileViewModel] = []
     private var filteredList: [MobileViewModel] = [] {
         didSet {
+            emptyLabel.isHidden = !(selectedTabIndex == 1 && filteredList.isEmpty)
             tableView.reloadData()
         }
     }
@@ -96,6 +97,7 @@ class PhoneListController: UIViewController {
         addSortBarButtonItem()
         addTabOptions()
         addTableView()
+        addEmptyLabel()
     }
     
     private func addSortBarButtonItem() {
@@ -116,6 +118,12 @@ class PhoneListController: UIViewController {
         tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
+    }
+    
+    private func addEmptyLabel() {
+        view.addSubview(emptyLabel)
+        emptyLabel.leadingAnchor.constraint(equalTo: tableView.leadingAnchor).isActive = true
+        emptyLabel.topAnchor.constraint(equalTo: tableView.topAnchor, constant: 20).isActive = true
     }
     
     // --------------------------
@@ -174,6 +182,16 @@ class PhoneListController: UIViewController {
         tableView.register(PhoneTableViewCell.self, forCellReuseIdentifier: PhoneTableViewCell.cellId)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
+    }()
+    
+    private let emptyLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.isHidden = true
+        label.text = "No favoties yet! Add to favorite from All tab."
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 }
 
