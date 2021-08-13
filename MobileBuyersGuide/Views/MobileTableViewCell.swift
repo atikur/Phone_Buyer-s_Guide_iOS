@@ -1,5 +1,5 @@
 //
-//  PhoneTableViewCell.swift
+//  MobileTableViewCell.swift
 //  MobileBuyersGuide
 //
 //  Created by Atikur Rahman on 12/8/21.
@@ -8,18 +8,18 @@
 import UIKit
 import SDWebImage
 
-protocol PhoneCellDelegate: class {
+protocol MobileCellDelegate: class {
     func didTapFavorite(mobile: MobileViewModel)
 }
 
-class PhoneTableViewCell: UITableViewCell {
+class MobileTableViewCell: UITableViewCell {
     
     // --------------------------
     // MARK: - Properties
     // --------------------------
     
-    public static let cellId = String(describing: PhoneTableViewCell.self)
-    public weak var delegate: PhoneCellDelegate?
+    public static let cellId = String(describing: MobileTableViewCell.self)
+    public weak var delegate: MobileCellDelegate?
     private var mobile: MobileViewModel?
     
     public var isDisplayingFavoritesTab = false {
@@ -54,7 +54,7 @@ class PhoneTableViewCell: UITableViewCell {
         descriptionLabel.text = nil
         priceLabel.text = nil
         ratingLabel.text = nil
-        phoneImageView.image = nil
+        mobileImageView.image = nil
     }
     
     // --------------------------
@@ -80,7 +80,7 @@ class PhoneTableViewCell: UITableViewCell {
         priceLabel.text = "Price: $\(mobile.price)"
         
         guard let imageUrl = URL(string: mobile.thumbImageURL) else { return }
-        phoneImageView.sd_setImage(with: imageUrl, placeholderImage: nil)
+        mobileImageView.sd_setImage(with: imageUrl, placeholderImage: nil)
         
         setFavoriteButtonImage()
     }
@@ -99,7 +99,7 @@ class PhoneTableViewCell: UITableViewCell {
         backgroundColor = .white
         selectionStyle = .none
         
-        contentView.addSubview(phoneImageView)
+        contentView.addSubview(mobileImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(priceLabel)
@@ -112,7 +112,7 @@ class PhoneTableViewCell: UITableViewCell {
     
     private func addLabels() {
         titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: phoneImageView.trailingAnchor, constant: 8).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: mobileImageView.trailingAnchor, constant: 8).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: favoriteButton.leadingAnchor, constant: -8).isActive = true
         
         descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
@@ -133,10 +133,10 @@ class PhoneTableViewCell: UITableViewCell {
         favoriteButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
         favoriteButton.heightAnchor.constraint(equalTo: favoriteButton.widthAnchor).isActive = true
         
-        phoneImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        phoneImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2).isActive = true
-        phoneImageView.heightAnchor.constraint(equalTo: heightAnchor, constant: -24).isActive = true
-        phoneImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        mobileImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        mobileImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2).isActive = true
+        mobileImageView.heightAnchor.constraint(equalTo: heightAnchor, constant: -24).isActive = true
+        mobileImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
     
     // --------------------------
@@ -173,7 +173,7 @@ class PhoneTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let phoneImageView: UIImageView = {
+    private let mobileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true

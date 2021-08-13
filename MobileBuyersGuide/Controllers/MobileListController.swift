@@ -1,5 +1,5 @@
 //
-//  PhoneListController.swift
+//  MobileListController.swift
 //  MobileBuyersGuide
 //
 //  Created by Atikur Rahman on 12/8/21.
@@ -8,7 +8,7 @@
 import UIKit
 import ProgressHUD
 
-class PhoneListController: UIViewController {
+class MobileListController: UIViewController {
     
     enum SortOption {
         case priceDesc
@@ -186,7 +186,7 @@ class PhoneListController: UIViewController {
         tableView.delegate = self
         tableView.rowHeight = 108
         tableView.tableFooterView = UIView()
-        tableView.register(PhoneTableViewCell.self, forCellReuseIdentifier: PhoneTableViewCell.cellId)
+        tableView.register(MobileTableViewCell.self, forCellReuseIdentifier: MobileTableViewCell.cellId)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -201,14 +201,14 @@ class PhoneListController: UIViewController {
     }()
 }
 
-extension PhoneListController: UITableViewDataSource, UITableViewDelegate {
+extension MobileListController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PhoneTableViewCell.cellId, for: indexPath) as! PhoneTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MobileTableViewCell.cellId, for: indexPath) as! MobileTableViewCell
         cell.configure(mobile: filteredList[indexPath.row])
         cell.isDisplayingFavoritesTab = selectedTabIndex == 1
         cell.delegate = self
@@ -216,7 +216,7 @@ extension PhoneListController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = PhoneDetailController()
+        let controller = MobileDetailController()
         controller.mobileViewModel = filteredList[indexPath.row]
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -238,14 +238,14 @@ extension PhoneListController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension PhoneListController: PhoneCellDelegate {
+extension MobileListController: MobileCellDelegate {
     
     func didTapFavorite(mobile: MobileViewModel) {
         mobile.isFavorite() ? mobile.removeFromFavorite() : mobile.addToFavorite()
     }
 }
 
-extension PhoneListController: TabControlDelegate {
+extension MobileListController: TabControlDelegate {
     
     func didChangeTab(selectedIndex: Int) {
         selectedTabIndex = selectedIndex

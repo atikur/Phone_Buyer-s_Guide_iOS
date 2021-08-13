@@ -1,5 +1,5 @@
 //
-//  PhoneDetailController.swift
+//  MobileDetailController.swift
 //  MobileBuyersGuide
 //
 //  Created by Atikur Rahman on 12/8/21.
@@ -8,7 +8,7 @@
 import UIKit
 import ProgressHUD
 
-class PhoneDetailController: UIViewController {
+class MobileDetailController: UIViewController {
     
     // --------------------------
     // MARK: - Property
@@ -97,7 +97,7 @@ class PhoneDetailController: UIViewController {
         cv.dataSource = self
         cv.delegate = self
         cv.isPagingEnabled = true
-        cv.register(PhoneDetailCollectionViewCell.self, forCellWithReuseIdentifier: PhoneDetailCollectionViewCell.cellId)
+        cv.register(MobileDetailCollectionViewCell.self, forCellWithReuseIdentifier: MobileDetailCollectionViewCell.cellId)
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
@@ -111,14 +111,14 @@ class PhoneDetailController: UIViewController {
     }()
 }
 
-extension PhoneDetailController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension MobileDetailController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhoneDetailCollectionViewCell.cellId, for: indexPath) as! PhoneDetailCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MobileDetailCollectionViewCell.cellId, for: indexPath) as! MobileDetailCollectionViewCell
         cell.configure(viewModel: mobileViewModel, image: imageList[indexPath.item])
         return cell
     }

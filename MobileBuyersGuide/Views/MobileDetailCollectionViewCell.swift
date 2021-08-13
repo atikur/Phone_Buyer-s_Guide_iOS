@@ -1,5 +1,5 @@
 //
-//  PhoneDetailCollectionViewCell.swift
+//  MobileDetailCollectionViewCell.swift
 //  MobileBuyersGuide
 //
 //  Created by Atikur Rahman on 12/8/21.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class PhoneDetailCollectionViewCell: UICollectionViewCell {
+class MobileDetailCollectionViewCell: UICollectionViewCell {
     
     // --------------------------
     // MARK: - Properties
     // --------------------------
     
-    public static let cellId = String(describing: PhoneDetailCollectionViewCell.self)
+    public static let cellId = String(describing: MobileDetailCollectionViewCell.self)
     
     // --------------------------
     // MARK: - Initializers
@@ -44,7 +44,7 @@ class PhoneDetailCollectionViewCell: UICollectionViewCell {
         }
         
         guard let imageUrl = URL(string: urlStr) else { return }
-        phoneImageView.sd_setImage(with: imageUrl, placeholderImage: nil)
+        mobileImageView.sd_setImage(with: imageUrl, placeholderImage: nil)
         
         ratingLabel.text = "Rating: \(viewModel.rating)"
         priceLabel.text = "Price: $\(viewModel.price)"
@@ -55,7 +55,7 @@ class PhoneDetailCollectionViewCell: UICollectionViewCell {
     // --------------------------
     
     private func setupViews() {
-        contentView.addSubview(phoneImageView)
+        contentView.addSubview(mobileImageView)
         contentView.addSubview(infoContainerView)
         contentView.addSubview(priceLabel)
         contentView.addSubview(ratingLabel)
@@ -65,10 +65,10 @@ class PhoneDetailCollectionViewCell: UICollectionViewCell {
     }
     
     private func addPhoneImageView() {
-        phoneImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        phoneImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        phoneImageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        phoneImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        mobileImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
+        mobileImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        mobileImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+        mobileImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
     private func addInfoLabels() {
@@ -105,7 +105,7 @@ class PhoneDetailCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let phoneImageView: UIImageView = {
+    private let mobileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
