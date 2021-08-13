@@ -24,4 +24,13 @@ class MobileBuyersGuideUITests: XCTestCase {
         XCTAssertTrue(app.alerts["Sort"].exists)
         app.alerts["Sort"].buttons["Cancel"].tap()
     }
+    
+    // switch between "All" & "Favorite" tabs
+    func testTabSwitch() throws {
+        XCTAssertTrue(app.staticTexts["All"].exists)
+        app.staticTexts["Favorite"].tap()
+        XCTAssertTrue(app.staticTexts["Favorite"].exists)
+        app.staticTexts["All"].tap()
+        XCTAssertTrue(app.staticTexts["All"].exists)
+    }
 }
