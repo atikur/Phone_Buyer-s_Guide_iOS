@@ -48,9 +48,13 @@ class TabControl: UIView {
     // MARK: - Action Handlers
     // --------------------------
     
-    @objc private func handleDidTapOnTabItem() {
-        selectedIndex = selectedIndex == 0 ? 1 : 0
-        
+    @objc private func handleDidTapOnFirstOption() {
+        selectedIndex = 0
+        delegate?.didChangeTab(selectedIndex: selectedIndex)
+    }
+    
+    @objc private func handleDidTapOnSecondOption() {
+        selectedIndex = 1
         delegate?.didChangeTab(selectedIndex: selectedIndex)
     }
     
@@ -89,25 +93,27 @@ class TabControl: UIView {
     private func addFirstOptionLabel() {
         containerView.addSubview(firstOptionLabel)
         firstOptionLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
-        firstOptionLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        firstOptionLabel.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        firstOptionLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
         firstOptionLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.5).isActive = true
     }
     
     private func addSecondOptionLabel() {
         containerView.addSubview(secondOptionLabel)
         secondOptionLabel.leadingAnchor.constraint(equalTo: firstOptionLabel.trailingAnchor).isActive = true
-        secondOptionLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        secondOptionLabel.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        secondOptionLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
         secondOptionLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.5).isActive = true
     }
     
     private func addTapGestureRecognizers() {
-        let allOptionsTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDidTapOnTabItem))
+        let firstOptionTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDidTapOnFirstOption))
         firstOptionLabel.isUserInteractionEnabled = true
-        firstOptionLabel.addGestureRecognizer(allOptionsTapRecognizer)
+        firstOptionLabel.addGestureRecognizer(firstOptionTapRecognizer)
         
-        let favoriteOptionsTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDidTapOnTabItem))
+        let secondOptionTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDidTapOnSecondOption))
         secondOptionLabel.isUserInteractionEnabled = true
-        secondOptionLabel.addGestureRecognizer(favoriteOptionsTapRecognizer)
+        secondOptionLabel.addGestureRecognizer(secondOptionTapRecognizer)
     }
     
     // --------------------------
