@@ -28,9 +28,21 @@
 		C2244F00708990F8DD9D1D1A /* Pods_MobileBuyersGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC7D120E2779A254A9CFA1 /* Pods_MobileBuyersGuide.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2446C05C26C6189B00007C34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24642A4326C4D3C70070A602 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24642A4A26C4D3C80070A602;
+			remoteInfo = MobileBuyersGuide;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		15E2A3F3C83DE4DE9E05E62F /* Pods-MobileBuyersGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileBuyersGuide.release.xcconfig"; path = "Target Support Files/Pods-MobileBuyersGuide/Pods-MobileBuyersGuide.release.xcconfig"; sourceTree = "<group>"; };
 		242FA2B826C60AE40063AC21 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		2446C05726C6189B00007C34 /* MobileBuyersGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileBuyersGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2446C05B26C6189B00007C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24495ECD26C52991007584EA /* PhoneDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDetailController.swift; sourceTree = "<group>"; };
 		24495ED126C53CC2007584EA /* MobileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileViewModel.swift; sourceTree = "<group>"; };
 		24495EF626C54BA8007584EA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -55,6 +67,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2446C05426C6189B00007C34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		24642A4826C4D3C80070A602 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2446C05826C6189B00007C34 /* MobileBuyersGuideTests */ = {
+			isa = PBXGroup;
+			children = (
+				2446C05B26C6189B00007C34 /* Info.plist */,
+			);
+			path = MobileBuyersGuideTests;
+			sourceTree = "<group>";
+		};
 		24495ED026C53CA8007584EA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				24642A4D26C4D3C80070A602 /* MobileBuyersGuide */,
+				2446C05826C6189B00007C34 /* MobileBuyersGuideTests */,
 				24642A4C26C4D3C80070A602 /* Products */,
 				28DBE129B00CDD15F8A46FB8 /* Pods */,
 				B4C1A0EFD3620C2B2FBDB286 /* Frameworks */,
@@ -98,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				24642A4B26C4D3C80070A602 /* MobileBuyersGuide.app */,
+				2446C05726C6189B00007C34 /* MobileBuyersGuideTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,6 +223,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2446C05626C6189B00007C34 /* MobileBuyersGuideTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2446C06026C6189B00007C34 /* Build configuration list for PBXNativeTarget "MobileBuyersGuideTests" */;
+			buildPhases = (
+				2446C05326C6189B00007C34 /* Sources */,
+				2446C05426C6189B00007C34 /* Frameworks */,
+				2446C05526C6189B00007C34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2446C05D26C6189B00007C34 /* PBXTargetDependency */,
+			);
+			name = MobileBuyersGuideTests;
+			productName = MobileBuyersGuideTests;
+			productReference = 2446C05726C6189B00007C34 /* MobileBuyersGuideTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		24642A4A26C4D3C80070A602 /* MobileBuyersGuide */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24642A5F26C4D3CC0070A602 /* Build configuration list for PBXNativeTarget "MobileBuyersGuide" */;
@@ -222,6 +269,10 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					2446C05626C6189B00007C34 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 24642A4A26C4D3C80070A602;
+					};
 					24642A4A26C4D3C80070A602 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -241,11 +292,19 @@
 			projectRoot = "";
 			targets = (
 				24642A4A26C4D3C80070A602 /* MobileBuyersGuide */,
+				2446C05626C6189B00007C34 /* MobileBuyersGuideTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2446C05526C6189B00007C34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		24642A4926C4D3C80070A602 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,6 +359,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2446C05326C6189B00007C34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		24642A4726C4D3C80070A602 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,6 +391,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2446C05D26C6189B00007C34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24642A4A26C4D3C80070A602 /* MobileBuyersGuide */;
+			targetProxy = 2446C05C26C6189B00007C34 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		24642A5926C4D3CC0070A602 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -337,6 +411,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2446C05E26C6189B00007C34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9PYG64528E;
+				INFOPLIST_FILE = MobileBuyersGuideTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.atikur.MobileBuyersGuideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobileBuyersGuide.app/MobileBuyersGuide";
+			};
+			name = Debug;
+		};
+		2446C05F26C6189B00007C34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9PYG64528E;
+				INFOPLIST_FILE = MobileBuyersGuideTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.atikur.MobileBuyersGuideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobileBuyersGuide.app/MobileBuyersGuide";
+			};
+			name = Release;
+		};
 		24642A5D26C4D3CC0070A602 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -498,6 +612,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2446C06026C6189B00007C34 /* Build configuration list for PBXNativeTarget "MobileBuyersGuideTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2446C05E26C6189B00007C34 /* Debug */,
+				2446C05F26C6189B00007C34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		24642A4626C4D3C70070A602 /* Build configuration list for PBXProject "MobileBuyersGuide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
