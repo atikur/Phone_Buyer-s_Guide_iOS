@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2407EF9026C63FD0006E5C5C /* MobileBuyersGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2407EF8F26C63FD0006E5C5C /* MobileBuyersGuideUITests.swift */; };
 		242FA2B926C60AE40063AC21 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242FA2B826C60AE40063AC21 /* UIViewController+Extension.swift */; };
 		2446C06C26C6208000007C34 /* EndPointUrlStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2446C06B26C6208000007C34 /* EndPointUrlStringTests.swift */; };
 		24495ECE26C52991007584EA /* MobileDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495ECD26C52991007584EA /* MobileDetailController.swift */; };
@@ -30,6 +31,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2407EF9226C63FD0006E5C5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24642A4326C4D3C70070A602 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24642A4A26C4D3C80070A602;
+			remoteInfo = MobileBuyersGuide;
+		};
 		2446C05C26C6189B00007C34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24642A4326C4D3C70070A602 /* Project object */;
@@ -41,6 +49,9 @@
 
 /* Begin PBXFileReference section */
 		15E2A3F3C83DE4DE9E05E62F /* Pods-MobileBuyersGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileBuyersGuide.release.xcconfig"; path = "Target Support Files/Pods-MobileBuyersGuide/Pods-MobileBuyersGuide.release.xcconfig"; sourceTree = "<group>"; };
+		2407EF8D26C63FD0006E5C5C /* MobileBuyersGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileBuyersGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2407EF8F26C63FD0006E5C5C /* MobileBuyersGuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileBuyersGuideUITests.swift; sourceTree = "<group>"; };
+		2407EF9126C63FD0006E5C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		242FA2B826C60AE40063AC21 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		2446C05726C6189B00007C34 /* MobileBuyersGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileBuyersGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2446C05B26C6189B00007C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +80,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2407EF8A26C63FD0006E5C5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2446C05426C6189B00007C34 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2407EF8E26C63FD0006E5C5C /* MobileBuyersGuideUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2407EF8F26C63FD0006E5C5C /* MobileBuyersGuideUITests.swift */,
+				2407EF9126C63FD0006E5C5C /* Info.plist */,
+			);
+			path = MobileBuyersGuideUITests;
+			sourceTree = "<group>";
+		};
 		2446C05826C6189B00007C34 /* MobileBuyersGuideTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +146,7 @@
 			children = (
 				24642A4D26C4D3C80070A602 /* MobileBuyersGuide */,
 				2446C05826C6189B00007C34 /* MobileBuyersGuideTests */,
+				2407EF8E26C63FD0006E5C5C /* MobileBuyersGuideUITests */,
 				24642A4C26C4D3C80070A602 /* Products */,
 				28DBE129B00CDD15F8A46FB8 /* Pods */,
 				B4C1A0EFD3620C2B2FBDB286 /* Frameworks */,
@@ -130,6 +158,7 @@
 			children = (
 				24642A4B26C4D3C80070A602 /* MobileBuyersGuide.app */,
 				2446C05726C6189B00007C34 /* MobileBuyersGuideTests.xctest */,
+				2407EF8D26C63FD0006E5C5C /* MobileBuyersGuideUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,6 +255,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2407EF8C26C63FD0006E5C5C /* MobileBuyersGuideUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2407EF9626C63FD0006E5C5C /* Build configuration list for PBXNativeTarget "MobileBuyersGuideUITests" */;
+			buildPhases = (
+				2407EF8926C63FD0006E5C5C /* Sources */,
+				2407EF8A26C63FD0006E5C5C /* Frameworks */,
+				2407EF8B26C63FD0006E5C5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2407EF9326C63FD0006E5C5C /* PBXTargetDependency */,
+			);
+			name = MobileBuyersGuideUITests;
+			productName = MobileBuyersGuideUITests;
+			productReference = 2407EF8D26C63FD0006E5C5C /* MobileBuyersGuideUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		2446C05626C6189B00007C34 /* MobileBuyersGuideTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2446C06026C6189B00007C34 /* Build configuration list for PBXNativeTarget "MobileBuyersGuideTests" */;
@@ -272,6 +319,10 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					2407EF8C26C63FD0006E5C5C = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 24642A4A26C4D3C80070A602;
+					};
 					2446C05626C6189B00007C34 = {
 						CreatedOnToolsVersion = 12.4;
 						LastSwiftMigration = 1240;
@@ -297,11 +348,19 @@
 			targets = (
 				24642A4A26C4D3C80070A602 /* MobileBuyersGuide */,
 				2446C05626C6189B00007C34 /* MobileBuyersGuideTests */,
+				2407EF8C26C63FD0006E5C5C /* MobileBuyersGuideUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2407EF8B26C63FD0006E5C5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2446C05526C6189B00007C34 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,6 +422,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2407EF8926C63FD0006E5C5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2407EF9026C63FD0006E5C5C /* MobileBuyersGuideUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2446C05326C6189B00007C34 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,6 +464,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2407EF9326C63FD0006E5C5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24642A4A26C4D3C80070A602 /* MobileBuyersGuide */;
+			targetProxy = 2407EF9226C63FD0006E5C5C /* PBXContainerItemProxy */;
+		};
 		2446C05D26C6189B00007C34 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 24642A4A26C4D3C80070A602 /* MobileBuyersGuide */;
@@ -416,6 +488,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2407EF9426C63FD0006E5C5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9PYG64528E;
+				INFOPLIST_FILE = MobileBuyersGuideUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.atikur.MobileBuyersGuideUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MobileBuyersGuide;
+			};
+			name = Debug;
+		};
+		2407EF9526C63FD0006E5C5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9PYG64528E;
+				INFOPLIST_FILE = MobileBuyersGuideUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.atikur.MobileBuyersGuideUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MobileBuyersGuide;
+			};
+			name = Release;
+		};
 		2446C05E26C6189B00007C34 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -510,7 +620,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -565,7 +675,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -620,6 +730,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2407EF9626C63FD0006E5C5C /* Build configuration list for PBXNativeTarget "MobileBuyersGuideUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2407EF9426C63FD0006E5C5C /* Debug */,
+				2407EF9526C63FD0006E5C5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2446C06026C6189B00007C34 /* Build configuration list for PBXNativeTarget "MobileBuyersGuideTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
