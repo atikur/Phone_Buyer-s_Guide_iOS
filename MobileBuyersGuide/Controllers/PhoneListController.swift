@@ -43,8 +43,10 @@ class PhoneListController: UIViewController {
     private var mobileList: [MobileViewModel] = []
     private var filteredList: [MobileViewModel] = [] {
         didSet {
-            emptyLabel.isHidden = !(selectedTabIndex == 1 && filteredList.isEmpty)
-            tableView.reloadData()
+            emptyLabel.text = selectedTabIndex == 0 ? "No records found!" : "No favoties yet! Add to favorite from All tab."
+            emptyLabel.isHidden = !filteredList.isEmpty
+            tableView.isHidden = filteredList.isEmpty
+            !filteredList.isEmpty ? tableView.reloadData() : ()
         }
     }
     
@@ -82,6 +84,7 @@ class PhoneListController: UIViewController {
                 self?.filteredList = self?.mobileList ?? []
                 self?.tableView.isHidden = false
             case .failure(let error):
+                self?.filteredList = []
                 if let error = error as? SCBRequestManager.SCBError {
                     self?.showAlert(title: "Error", message: error.message)
                 } else {
@@ -193,7 +196,6 @@ class PhoneListController: UIViewController {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.isHidden = true
-        label.text = "No favoties yet! Add to favorite from All tab."
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
