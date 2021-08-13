@@ -9,6 +9,10 @@ import UIKit
 
 struct MobileViewModel {
     
+    // -----------------------
+    // MARK: - Properties
+    // -----------------------
+    
     let id: Int
     let rating: Double
     let thumbImageURL: String
@@ -17,17 +21,7 @@ struct MobileViewModel {
     let name: String
     let description: String
     
-    init(with mobile: Mobile) {
-        self.id = mobile.id
-        self.rating = mobile.rating
-        self.thumbImageURL = mobile.thumbImageURL
-        self.brand = mobile.brand
-        self.price = mobile.price
-        self.name = mobile.name
-        self.description = mobile.description
-    }
-    
-    func isFavorite() -> Bool {
+    var isFavorite: Bool {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return false
         }
@@ -44,6 +38,24 @@ struct MobileViewModel {
         
         return false
     }
+    
+    // -----------------------
+    // MARK: - Initializer
+    // -----------------------
+    
+    init(with mobile: Mobile) {
+        self.id = mobile.id
+        self.rating = mobile.rating
+        self.thumbImageURL = mobile.thumbImageURL
+        self.brand = mobile.brand
+        self.price = mobile.price
+        self.name = mobile.name
+        self.description = mobile.description
+    }
+    
+    // ----------------------------
+    // MARK: - Favorites
+    // ----------------------------
     
     func addToFavorite() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -76,8 +88,11 @@ struct MobileViewModel {
         }
     }
     
-    public static func filterFavorites(mobileList: [MobileViewModel], completion: @escaping ([MobileViewModel]) -> Void) {
-        let favorites = mobileList.filter {$0.isFavorite()}
+    public static func filterFavorites(
+        mobileList: [MobileViewModel],
+        completion: @escaping ([MobileViewModel]) -> Void
+    ) {
+        let favorites = mobileList.filter {$0.isFavorite}
         completion(favorites)
     }
 }

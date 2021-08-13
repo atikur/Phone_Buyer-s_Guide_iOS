@@ -86,7 +86,7 @@ class MobileTableViewCell: UITableViewCell {
     }
     
     private func setFavoriteButtonImage() {
-        guard let isFavorite = mobile?.isFavorite() else { return }
+        guard let isFavorite = mobile?.isFavorite else { return }
         let favoriteImg = isFavorite ? "starFilled" : "starEmpty"
         favoriteButton.setImage(UIImage(named: favoriteImg), for: .normal)
     }

@@ -241,7 +241,7 @@ extension MobileListController: UITableViewDataSource, UITableViewDelegate {
 extension MobileListController: MobileCellDelegate {
     
     func didTapFavorite(mobile: MobileViewModel) {
-        mobile.isFavorite() ? mobile.removeFromFavorite() : mobile.addToFavorite()
+        mobile.isFavorite ? mobile.removeFromFavorite() : mobile.addToFavorite()
     }
 }
 
