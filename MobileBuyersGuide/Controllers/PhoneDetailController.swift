@@ -48,7 +48,11 @@ class PhoneDetailController: UIViewController {
                 self?.imageList = images
                 print(images)
             case .failure(let error):
-                print(error)
+                if let error = error as? SCBRequestManager.SCBError {
+                    self?.showAlert(title: "Failed to fetch images", message: error.message)
+                } else {
+                    self?.showAlert(title: "Failed to fetch images", message: "Try again later.")
+                }
             }
         }
     }

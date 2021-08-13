@@ -56,10 +56,19 @@ class SCBRequestManager {
         provider.request(.getImages(mobileId: mobileId)) { result in
             switch result {
             case .success(let response):
-                guard let images = try? response.map([MobileImage].self) else { return }
-                completion(.success(images))
-            case .failure(let error):
-                completion(.failure(error))
+                guard (200...299).contains(response.statusCode) else {
+                    completion(.failure(SCBError.apiError))
+                    return
+                }
+                
+                do {
+                    let images = try response.map([MobileImage].self)
+                    completion(.success(images))
+                } catch {
+                    completion(.failure(SCBError.parseFail))
+                }
+            case .failure:
+                completion(.failure(SCBError.other))
             }
         }
     }
