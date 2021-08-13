@@ -10,9 +10,9 @@ import Moya
 class SCBRequestManager {
     
     enum SCBError: Error {
-        case other
-        case noData
+        case apiError
         case parseFail
+        case other
     }
     
     private let provider = MoyaProvider<SCBTarget>()
@@ -21,8 +21,17 @@ class SCBRequestManager {
         provider.request(.getMobiles) { result in
             switch result {
             case .success(let response):
-                guard let mobiles = try? response.map([Mobile].self) else { return }
-                completion(.success(mobiles))
+                guard (200...299).contains(response.statusCode) else {
+                    completion(.failure(SCBError.apiError))
+                    return
+                }
+                
+                do {
+                    let mobiles = try response.map([Mobile].self)
+                    completion(.success(mobiles))
+                } catch {
+                    completion(.failure(SCBError.parseFail))
+                }
             case .failure(let error):
                 completion(.failure(error))
             }
