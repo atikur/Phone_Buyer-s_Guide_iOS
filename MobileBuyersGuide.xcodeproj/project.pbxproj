@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		242FA2B926C60AE40063AC21 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242FA2B826C60AE40063AC21 /* UIViewController+Extension.swift */; };
+		2446C06C26C6208000007C34 /* EndPointUrlStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2446C06B26C6208000007C34 /* EndPointUrlStringTests.swift */; };
 		24495ECE26C52991007584EA /* PhoneDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495ECD26C52991007584EA /* PhoneDetailController.swift */; };
 		24495ED226C53CC2007584EA /* MobileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24495ED126C53CC2007584EA /* MobileViewModel.swift */; };
 		24495EF726C54BA8007584EA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24495EF526C54BA8007584EA /* Model.xcdatamodeld */; };
@@ -43,6 +44,7 @@
 		242FA2B826C60AE40063AC21 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		2446C05726C6189B00007C34 /* MobileBuyersGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileBuyersGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2446C05B26C6189B00007C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2446C06B26C6208000007C34 /* EndPointUrlStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointUrlStringTests.swift; sourceTree = "<group>"; };
 		24495ECD26C52991007584EA /* PhoneDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDetailController.swift; sourceTree = "<group>"; };
 		24495ED126C53CC2007584EA /* MobileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileViewModel.swift; sourceTree = "<group>"; };
 		24495EF626C54BA8007584EA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				2446C05B26C6189B00007C34 /* Info.plist */,
+				2446C06B26C6208000007C34 /* EndPointUrlStringTests.swift */,
 			);
 			path = MobileBuyersGuideTests;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				TargetAttributes = {
 					2446C05626C6189B00007C34 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 						TestTargetID = 24642A4A26C4D3C80070A602;
 					};
 					24642A4A26C4D3C80070A602 = {
@@ -363,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2446C06C26C6208000007C34 /* EndPointUrlStringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9PYG64528E;
 				INFOPLIST_FILE = MobileBuyersGuideTests/Info.plist;
@@ -425,6 +431,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.atikur.MobileBuyersGuideTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobileBuyersGuide.app/MobileBuyersGuide";
@@ -435,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9PYG64528E;
 				INFOPLIST_FILE = MobileBuyersGuideTests/Info.plist;
